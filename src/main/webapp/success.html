@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+        }
+        h1 {
+            color: #534cc5;
+        }
+        p {
+            color: #555;
+            margin: 20px 0;
+        }
+        .details {
+            font-weight: bold;
+            color: #333;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color:#8a79f0 ;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #534cc5;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Payment Completed Successfully!</h1>
+    <p>Thank you for your payment, <span id="customerName" class="details"></span>.</p>
+    <p>Your booking has been successfully confirmed!</p>
+    <p>We hope you enjoy our services.</p>
+    <a href="DriveEasy.html" class="button">Go to Homepage</a>
+</div>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const customerName = urlParams.get('name') || 'Customer';
+    document.getElementById('customerName').textContent = customerName;
+</script>
+</body>
+</html>
